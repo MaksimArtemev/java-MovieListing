@@ -33,9 +33,9 @@ public class Fantasy extends Film {
 	}
 	
 	
-	//SciFi::Sci_Fi
+	//Fantasy::Fantasy
 	//	call superclass constructor
-	//	initialize attributes of Genre subclass(Sci_Fi)
+	//	initialize attributes of Genre subclass(Fantasy)
 	public Fantasy() {
 		super();
 		movieTitle = "";
@@ -43,12 +43,13 @@ public class Fantasy extends Film {
 		rating = "";
 	}
 	
-	//SciFi::Sci_Fi
+	//Fantasy::Fantasy
 	//call superclass constructor
-	//	accepts String movieTitle; int yearReleased; String rating; from genre subclasses
-	public Fantasy(String movieTitle, int yearReleased, String genreName, String rating) {
-		movieTitle = getMovieTitle();
-		yearReleased = getYearReleased();
-		rating = getRating();
+	//	accepts String directorName,String composerName,String genreName from parent class Film.java then accepts String movieTitle; int yearReleased; String rating; from genre subclass itself
+	public Fantasy(String directorName,String composerName,String genreName, String movieTitle, int yearReleased, String rating) {
+		super(directorName, composerName, genreName);
+		this.movieTitle = movieTitle;
+		this.yearReleased = yearReleased;
+		this.rating = rating;
 	}
 }

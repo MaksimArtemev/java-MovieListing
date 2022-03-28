@@ -4,10 +4,10 @@ package mainModule;
 public class Main {
 
 	public static void main(String[] args) {
-		/*try
+		try
 		{
-			Recipes recipes = new Recipes();
-			recipes.recipeManager();
+			Logic logic = new Logic();
+			logic.run(null);		//?????????????????? why cant I use listOfFilms  which is List<Film>
 			System.out.println("Success");
 		}
 		catch(Exception e)
@@ -15,7 +15,9 @@ public class Main {
 			System.out.println("A Large Error Has Happened :-(");
 			System.out.println(e.getLocalizedMessage());
 		}
-		*/
+		
 	}
 
 }
+
+

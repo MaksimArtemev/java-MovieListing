@@ -9,7 +9,7 @@ public class GUI {
 		if(value == null)
 		{
 			value = "-1";
-			
+
 		}
 		return value;
 

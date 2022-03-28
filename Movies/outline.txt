@@ -1,0 +1,118 @@
+Write Java program that will:
+
+- read a input file of movie data
+- Place it into arraylist
+- divide into 7 genre subclsses
+- sort by year
+- display sorted output to the user via message dialog box
+
+Original files:
+
+- Main.java
+	- Launches the program and invokes GUI.java
+  ::main()
+  	- invoke GUI.run()
+
+- GUI.java
+	- In charge of interaction between the user and connecting to Logic.java
+
+::dialogBoxMethod(String message) 
+  	- Display message in a dialogue box
+    
+  ::run() # Client clarification required
+    - Main event loop:
+    	- Ask user for which genre they want to see
+      - Show dialogue box of genre/year
+      - Run until exit
+
+	```
+  /** Document what needs be done
+   *
+   */
+  public void run() {
+  	throw new Exception("dont know what to do");
+    
+    List<Film> films = Logic.readInputFile("input.txt");
+    for (film : films) {
+      // ... do something ...
+    }
+  }
+  ```
+
+- Logic.java (If sort here, use comparator - outside person directs u;)
+	- Responsible for manipulating the arraylist
+	
+  ::List<Film> readInputFile(String filename)
+  	- parse the contents of the file
+    - generate arraylist of Film
+    - List<Film> movies = new ArrayList<Film>();
+    - Do not do this: ArrayList<Film> movies = new ArrayList<Film>();
+    - List = interface (https://docs.oracle.com/javase/tutorial/collections/interfaces/list.html); ArrayList = Class;
+
+  
+  	===========================
+    Tangent about interfaces
+    
+    Multiple types of lists
+    
+    interface List:
+    	add() # these methods must exist for a class to implement this interface
+      remove()
+      size()
+      
+    
+    ArrayList implements List
+    	add():
+      	create a new array
+    LinkedList implements List
+    	add():
+      	create a new node
+    DoublyLinkedList implements List
+    	...
+    SinglyLinkedList implements List
+    	...
+
+		C# Interfaces: https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/interface
+    
+    ===========================
+  
+  # Client clarification required
+
+- Film.java (must implement Comparable - "I look around" concept)
+	- holds movie data (needs to private attributes, configure setters/getters for access control)
+  	:String directorName
+    :String composerName
+		:String genreName
+    ::int compareTo() - "I look around" concept # Need more clarification from client
+    	- focus on genre first
+      	- order: scifi, adventure, drama, war, romance, thriller, fantasy
+      - focus on year second
+      	- ascending
+- SciFi.java (all attributes are private, each one has setter/getter)		dont do "_" = PascalCaseForClasses (Pascal_Snake_Case (bad), camelCaseForMethods, final public static String SCREAMING_SNAKE_CASE = "I never change")
+	:String movieTitle
+  :int yearReleased
+  :String rating
+- Adventure.java (all attributes are private, each one has setter/getter)
+	:String movieTitle
+  :int yearReleased
+  :String rating
+- Drama.java (all attributes are private, each one has setter/getter)
+	:String movieTitle
+  :int yearReleased
+  :String rating
+- War.java (all attributes are private, each one has setter/getter)
+	:String movieTitle
+  :int yearReleased
+  :String rating
+- Romance.java (all attributes are private, each one has setter/getter)
+	:String movieTitle
+  :int yearReleased
+  :String rating
+- Thriller.java (all attributes are private, each one has setter/getter)
+	:String movieTitle
+  :int yearReleased
+  :String rating
+- Fantasy.java (all attributes are private, each one has setter/getter)
+	:String movieTitle
+  :int yearReleased
+  :String rating

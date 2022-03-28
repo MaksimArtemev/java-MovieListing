@@ -1,6 +1,6 @@
 package mainModule;
 
-public class Sci_Fi extends Film {
+public class SciFi extends Film {
 	//Attributes
 	private String movieTitle;
 	private int yearReleased;
@@ -33,25 +33,25 @@ public class Sci_Fi extends Film {
 	}
 	
 	
-	//SciFi::Sci_Fi
+	//SciFi::SciFi
 	//	call superclass constructor
-	//	initialize attributes of Genre subclass(Sci_Fi)
-	public Sci_Fi() {
+	//	initialize attributes of Genre subclass(SciFi)
+	public SciFi() {
 		super();
 		movieTitle = "";
 		yearReleased = 0;
 		rating = "";
 	}
 	
-	//SciFi::Sci_Fi
+	//SciFi::SciFi
 	//call superclass constructor
-	//	accepts String movieTitle; int yearReleased; String rating; from genre subclasses
-	public Sci_Fi(String movieTitle, int yearReleased, String genreName, String rating) {
-		movieTitle = getMovieTitle();
-		yearReleased = getYearReleased();
-		rating = getRating();
+	//	accepts String directorName,String composerName,String genreName from parent class Film.java then accepts String movieTitle; int yearReleased; String rating; from genre subclass itself
+	public SciFi(String directorName,String composerName,String genreName, String movieTitle, int yearReleased, String rating) {
+		super(directorName, composerName, genreName);
+		this.movieTitle = movieTitle;
+		this.yearReleased = yearReleased;
+		this.rating = rating;
 	}
-
-	
 }
+
 
