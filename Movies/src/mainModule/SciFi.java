@@ -52,6 +52,11 @@ public class SciFi extends Film {
 		this.yearReleased = yearReleased;
 		this.rating = rating;
 	}
+
+	public int compareTo(Film other){
+		
+		return super.compareTo(other);
+	}
 }
 
 

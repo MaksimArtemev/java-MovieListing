@@ -1,14 +1,18 @@
 package mainModule;
 
+import java.util.List;
 
 public class Main {
 
 	public static void main(String[] args) {
 		try
 		{
+			
 			Logic logic = new Logic();
-			logic.run(null);		//?????????????????? why cant I use listOfFilms  which is List<Film>
+			logic.readInputFile();		
+			logic.print();
 			System.out.println("Success");
+
 		}
 		catch(Exception e)
 		{

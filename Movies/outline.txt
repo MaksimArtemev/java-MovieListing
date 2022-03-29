@@ -41,7 +41,7 @@ Original files:
 
 - Logic.java (If sort here, use comparator - outside person directs u;)
 	- Responsible for manipulating the arraylist
-	
+    -compareTo sort by 
   ::List<Film> readInputFile(String filename)
   	- parse the contents of the file
     - generate arraylist of Film
