@@ -3,21 +3,10 @@ package mainModule;
 import javax.swing.JOptionPane;
 
 public class GUI {
-	public String displayOption(String Description)
-	{
-		String value = JOptionPane.showInputDialog(Description);
-		if(value == null)
-		{
-			value = "-1";
-
-		}
-		return value;
-
-	}
 	
-	public void displayMessage(String Description)
+	public void displayMessage(String Genre)
 	{
-		JOptionPane.showMessageDialog(null, Description);
+		JOptionPane.showMessageDialog(null, Genre);
 
 	}
 	

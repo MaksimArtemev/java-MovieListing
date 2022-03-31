@@ -3,93 +3,136 @@ package mainModule;
 import java.util.List;
 
 //Superclass/parent
-public class Film implements Comparable<Film>{
-	
-	//Attributes
+public class Film implements Comparable<Film> {
+
+	// Attributes
 	private String directorName;
 	private String composerName;
-	private String genreName;
-	public final static List<String> CORRECT_GENRE_ORDER = List.of("Sci Fi", "Adventure", "Drama", "War", "Romance", "Thriller", "Fantasy");
+	protected String genreName;
+	public final static List<String> CORRECT_GENRE_ORDER = List.of("Sci Fi", "Adventure", "Drama", "War", "Romance",
+			"Thriller", "Fantasy");
 
-	//getters
-	public String getDirectorName(){
+	// getters
+	public String getDirectorName() {
 		return this.directorName;
 	}
-	
-	public String getComposerName(){
+
+	public String getComposerName() {
 		return composerName;
 	}
-	
-	public String getGenreName(){
+
+	public String getGenreName() {
 		return genreName;
 	}
-	
-	//setters
-	public void setDirectorName(String directorName){
+
+	// setters
+	public void setDirectorName(String directorName) {
 		this.directorName = directorName;
 	}
-	
-	public void setComposerName(String composerName){
+
+	public void setComposerName(String composerName) {
 		this.composerName = composerName;
 	}
-	
-	public void setGenreName(String genreName){
+
+	public void setGenreName(String genreName) {
 		this.genreName = genreName;
 	}
-	
-	//Film::Film
-	//constructor
+
+	// Film::Film
+	// constructor
 	public Film() {
 		directorName = "";
 		composerName = "";
 		genreName = "";
 	}
-	
-	//Film::Film
-	//constructor accepts String directorName, String composerName, String genreName
-	public Film(String directorName, String composerName, String genreName) { 
+
+	// Film::Film
+	// constructor accepts String directorName, String composerName, String
+	// genreName
+	public Film(String directorName, String composerName, String genreName) {
 		this.directorName = directorName;
 		this.composerName = composerName;
 		this.genreName = genreName;
 	}
 
-	public String toString(){
+	public String dramaToString() {
 
 		return directorName + ", " + composerName + ", " + genreName;
 	}
-	
+
 	/*
-	Sci Fi
+	 * Sci Fi
+	 * 
+	 * Adventure
+	 * 
+	 * Drama
+	 * 
+	 * War
+	 * 
+	 * Romance
+	 * 
+	 * Thriller
+	 * 
+	 * Fantasy
+	 */
+	public int compareTo(Film other) { // if its primitive data type u cant use compareTo method but instead use
+										// CompareTo class
 
-	Adventure
+		int thisGenreIndex = CORRECT_GENRE_ORDER.indexOf(this.genreName);
+		int otherGenreIndex = CORRECT_GENRE_ORDER.indexOf(other.genreName);
 
-	Drama
+		int genreComparison = Integer.compare(thisGenreIndex, otherGenreIndex);
 
-	War
+		if (genreComparison == 0) {
+			// Need to do the casting mumbo jumbo
+			int thisYearReleased = 0;
+			int otherYearReleased = 0;
 
-	Romance
+			// ((SciFi)this).yearReleased; // casts current object as scifi movie
+			// ((SciFi)other).yearReleased; // casts
 
-	Thriller
+			// Handles all the casting for this movie
+			if (this instanceof SciFi) {
+				thisYearReleased = ((SciFi) this).getYearReleased();
+			} else if (this instanceof Adventure) {
+				thisYearReleased = ((Adventure) this).getYearReleased();
+			} else if (this instanceof Drama) {
+				thisYearReleased = ((Drama) this).getYearReleased();
+			} else if (this instanceof War) {
+				thisYearReleased = ((War) this).getYearReleased();
+			} else if (this instanceof Romance) {
+				thisYearReleased = ((Romance) this).getYearReleased();
+			} else if (this instanceof Thriller) {
+				thisYearReleased = ((Thriller) this).getYearReleased();
+			} else if (this instanceof Fantasy) {
+				thisYearReleased = ((Fantasy) this).getYearReleased();
+			}
 
-	Fantasy 
-	*/
-	public int compareTo(Film other){ //if its primitive data type u cant use compareTo method but instead use CompareTo class
+			// Handles all the casting for the other movie
+			if (other instanceof SciFi) {
+				otherYearReleased = ((SciFi) other).getYearReleased();
+			} else if (other instanceof Adventure) {
+				otherYearReleased = ((Adventure) other).getYearReleased();
+			} else if (other instanceof Drama) {
+				otherYearReleased = ((Drama) other).getYearReleased();
+			} else if (other instanceof War) {
+				otherYearReleased = ((War) other).getYearReleased();
+			} else if (other instanceof Romance) {
+				otherYearReleased = ((Romance) other).getYearReleased();
+			} else if (other instanceof Thriller) {
+				otherYearReleased = ((Thriller) other).getYearReleased();
+			} else if (other instanceof Fantasy) {
+				otherYearReleased = ((Fantasy) other).getYearReleased();
+			}
 
-		
-		int index1 = CORRECT_GENRE_ORDER.indexOf(this.genreName);
-		int index2 = CORRECT_GENRE_ORDER.indexOf(other.genreName);
+			return Integer.compare(thisYearReleased, otherYearReleased);
+			// ***ctrl + D to rename = highlights every instance of it */
+			//***alt + shift + f  = spacing */
+		}
+		return genreComparison;
 
-		return Integer.compare(index1, index2);
-
-
-		/*
-		Integer.compare(.getYearReleased(), getYearReleased())
-
-		int last =  this.getYearReleased().compareTo(other.getYearReleased());
-        return last == 0 ? this.yearReleased.compareTo(other.yearReleased) : last;
-		*/
 	}
 
-	//static - u can call methods without instaniating an object
-	
+	// static - u can call methods without instaniating an object
+
 }

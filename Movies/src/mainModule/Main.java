@@ -1,7 +1,5 @@
 package mainModule;
 
-import java.util.List;
-
 public class Main {
 
 	public static void main(String[] args) {
@@ -9,8 +7,7 @@ public class Main {
 		{
 			
 			Logic logic = new Logic();
-			logic.readInputFile();		
-			logic.print();
+			logic.run();
 			System.out.println("Success");
 
 		}
@@ -23,5 +20,7 @@ public class Main {
 	}
 
 }
+
+//abdul bari matrixes videos
 
 

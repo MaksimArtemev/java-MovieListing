@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 
 public class Logic {
 
-	public GUI gui;
+	private GUI gui;
 	private List<Film> listOfFilms;
 
     public static final String FILEPATH = "MovieListing.txt";
@@ -114,7 +114,6 @@ public class Logic {
     public void print()
     {;
 		sortFilms();
-		System.out.println("Hello world!");
 		for (Film film : listOfFilms) {				//recreates a new object for each itteration
             System.out.println(film.toString());
         }
@@ -134,14 +133,6 @@ public class Logic {
 		//listOfFilms.sort((o1, o2) -> o1.getYearReleased().compareTo(o2.getYearReleased()));
 	}
 
-	//display movies by genre
-	//add to  genre arraylist
-	//public void displayByGenre(List<Film> listOfFilms){
-	//	for (Film films : listOfFilms){
-		//	JOptionPane.showMessageDialog(films.getYearReleased());
-	//	}
-	//}
-
 	public void run() throws IOException{
 		readInputFile();
 		print();
@@ -149,7 +140,58 @@ public class Logic {
 		//displayByGenre(listOfFilms);
 	}
 	
+	//methods for GUI
+	public String sciFiResults(){
+		sortFilms();
+		String sciFi = "";
+		return sciFi;
+	}
 
-	//TO DO: Add method for GUI
+	public String adventureResults(){
+		sortFilms();
+		String adventure = "";
+		return adventure;
+	}
+
+	public String dramaResults(){
+		sortFilms();
+		String drama = "";
+		return drama;
+	}
+
+	public String warResults(){
+		sortFilms();
+		String war = "";
+		return war;
+	}
+
+	public String romanceResults(){
+		sortFilms();
+		String romance = "";
+		return romance;
+	}
+
+	public String thrillerResults(){
+		sortFilms();
+		String thriller = "";
+		return thriller;
+	}
+
+	public String fantasyResults(){
+		sortFilms();
+		String fantasy = "";
+		return fantasy;
+	}
+
+	public void guiResultStrings(){
+		this.gui.displayMessage(sciFiResults());
+		this.gui.displayMessage(adventureResults());
+		this.gui.displayMessage(dramaResults());
+		this.gui.displayMessage(warResults());
+		this.gui.displayMessage(romanceResults());
+		this.gui.displayMessage(thrillerResults());
+		this.gui.displayMessage(fantasyResults());
+	}
+	
 
 }
