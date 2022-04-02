@@ -1,16 +1,18 @@
 package mainModule;
 
-import java.util.List;
+//import java.util.List; //used for comparable
 
 //Superclass/parent
-public class Film implements Comparable<Film> {
+//public class Film implements Comparable<Film> { //used for comparable
+public class Film {
+
 
 	// Attributes
 	private String directorName;
 	private String composerName;
 	protected String genreName;
-	public final static List<String> CORRECT_GENRE_ORDER = List.of("Sci Fi", "Adventure", "Drama", "War", "Romance",
-			"Thriller", "Fantasy");
+	//public final static List<String> CORRECT_GENRE_ORDER = List.of("Sci Fi", "Adventure", "Drama", "War", "Romance",
+			//"Thriller", "Fantasy");  //used for comparable
 
 	// getters
 	public String getDirectorName() {
@@ -54,27 +56,7 @@ public class Film implements Comparable<Film> {
 		this.composerName = composerName;
 		this.genreName = genreName;
 	}
-
-	public String dramaToString() {
-
-		return directorName + ", " + composerName + ", " + genreName;
-	}
-
-	/*
-	 * Sci Fi
-	 * 
-	 * Adventure
-	 * 
-	 * Drama
-	 * 
-	 * War
-	 * 
-	 * Romance
-	 * 
-	 * Thriller
-	 * 
-	 * Fantasy
-	 */
+/*
 	public int compareTo(Film other) { // if its primitive data type u cant use compareTo method but instead use
 										// CompareTo class
 
@@ -128,11 +110,11 @@ public class Film implements Comparable<Film> {
 			return Integer.compare(thisYearReleased, otherYearReleased);
 			// ***ctrl + D to rename = highlights every instance of it */
 			//***alt + shift + f  = spacing */
-		}
+		/*}
 		return genreComparison;
 
 	}
-
+*/
 	// static - u can call methods without instaniating an object
 
 }

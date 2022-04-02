@@ -1,7 +1,5 @@
 package mainModule;
 
-import java.util.Collection;
-
 public class SciFi extends Film {
 	// Attributes
 	private String movieTitle;
@@ -49,17 +47,11 @@ public class SciFi extends Film {
 	// accepts String directorName,String composerName,String genreName from parent
 	// class Film.java then accepts String movieTitle; int yearReleased; String
 	// rating; from genre subclass itself
-	public SciFi(String directorName, String composerName, String genreName, String movieTitle, int yearReleased,
-			String rating) {
+	public SciFi(String directorName, String composerName, String genreName, String movieTitle, int yearReleased, String rating) {
 		super(directorName, composerName, genreName);
 		this.movieTitle = movieTitle;
 		this.yearReleased = yearReleased;
 		this.rating = rating;
-	}
-
-	public String toString() {
-
-		return movieTitle + ", " + yearReleased + ", " + rating;
 	}
 
 }

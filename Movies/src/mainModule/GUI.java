@@ -7,7 +7,6 @@ public class GUI {
 	public void displayMessage(String Genre)
 	{
 		JOptionPane.showMessageDialog(null, Genre);
-
 	}
 	
 	//GUI::GUI

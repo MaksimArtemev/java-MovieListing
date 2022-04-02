@@ -55,8 +55,4 @@ public class Fantasy extends Film {
 		this.rating = rating;
 	}
 
-	public String toString() {
-
-		return movieTitle + ", " + yearReleased + ", " + rating;
-	}
 }
