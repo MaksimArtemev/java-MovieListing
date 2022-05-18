@@ -18,7 +18,3 @@ public class Main {
 	}
 
 }
-
-//abdul bari matrixes videos
-
-

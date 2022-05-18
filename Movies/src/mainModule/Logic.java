@@ -169,7 +169,7 @@ public class Logic {
 
 	public void sortFilms() {
 		sort();
-		// Collections.sort(listOfFilms);
+		// Collections.sort(listOfFilms); //for advanced version that uses CompareTo
 	}
 
 	public void run() throws IOException {
@@ -192,12 +192,6 @@ public class Logic {
 				objectGenre = sciFi.getGenreName();
 				serializedOutput += String.format("%-70s%7d%7s%n", sciFi.getMovieTitle(), sciFi.getYearReleased(),
 						sciFi.getRating());
-				// serializedOutput += ((SciFi) film).toString(); //instead of toString use
-				// getDirectorName() ....
-				// String str2 = String.format("|%10d|", 101); // Right-justifying within the
-				// specified width
-				// String str3 = String.format("|%-10d|", 101); // Left-justifying within the
-				// specified width
 			}
 			if (film.getGenreName().equals(genre) && genre.equals("Adventure")) {
 				Adventure adventure = (Adventure) film;
@@ -206,7 +200,6 @@ public class Logic {
 				serializedOutput += String.format("%-70s%7d%7s%n", adventure.getMovieTitle(),
 						adventure.getYearReleased(), adventure.getRating());
 				// serializedOutput += ((Adventure) film).toString(); //instead of toString use
-				// getDirectorName() ....
 			}
 			if (film.getGenreName().equals(genre) && genre.equals("Drama")) {
 				Drama drama = (Drama) film;
@@ -215,7 +208,6 @@ public class Logic {
 				serializedOutput += String.format("%-70s%7d%7s%n", drama.getMovieTitle(), drama.getYearReleased(),
 						drama.getRating());
 				// serializedOutput += ((Drama) film).toString(); //instead of toString use
-				// getDirectorName() ....
 			}
 			if (film.getGenreName().equals(genre) && genre.equals("War")) {
 				War war = (War) film;
@@ -224,7 +216,6 @@ public class Logic {
 				serializedOutput += String.format("%-70s%7d%7s%n", war.getMovieTitle(), war.getYearReleased(),
 						war.getRating());
 				// serializedOutput += ((War) film).toString(); //instead of toString use
-				// getDirectorName() ....
 			}
 			if (film.getGenreName().equals(genre) && genre.equals("Romance")) {
 				Romance romance = (Romance) film;
@@ -233,7 +224,6 @@ public class Logic {
 				serializedOutput += String.format("%-70s%7d%7s%n", romance.getMovieTitle(), romance.getYearReleased(),
 						romance.getRating());
 				// serializedOutput += ((Romance) film).toString(); //instead of toString use
-				// getDirectorName() ....
 			}
 			if (film.getGenreName().equals(genre) && genre.equals("Thriller")) {
 				Thriller thriller = (Thriller) film;
@@ -242,7 +232,6 @@ public class Logic {
 				serializedOutput += String.format("%-70s%7d%7s%n", thriller.getMovieTitle(), thriller.getYearReleased(),
 						thriller.getRating());
 				// serializedOutput += ((Thriller) film).toString(); //instead of toString use
-				// getDirectorName() ....
 			}
 			if (film.getGenreName().equals(genre) && genre.equals("Fantasy")) {
 				Fantasy fantasy = (Fantasy) film;
@@ -251,7 +240,6 @@ public class Logic {
 				serializedOutput += String.format("%-70s%7d%7s%n", fantasy.getMovieTitle(), fantasy.getYearReleased(),
 						fantasy.getRating());
 				// serializedOutput += ((Fantasy) film).toString(); //instead of toString use
-				// getDirectorName() ....
 			}
 
 			header = String.format("Director:%25s\nComposer:%23s\nGenre:%41s\n\n", film.getDirectorName(),
